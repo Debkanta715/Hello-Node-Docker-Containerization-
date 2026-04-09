@@ -1,0 +1,8 @@
+
+services:
+  hello-node:
+    build: ./node
+    ports:
+      - "3000:3000"
+    environment:
+      - ENV_VALUE=${ENV_VALUE}

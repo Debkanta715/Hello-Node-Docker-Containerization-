@@ -17,7 +17,7 @@ function App() {
 
     try {
       const res = await fetch(
-        `${API_URL}/price?amount=${amount}&country=${country}`
+        `${API_URL}/price?amount=${amount}&country=${country}`,
       );
       const data = await res.json();
       setResult(data);
@@ -32,9 +32,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-center p-6">
       <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-lg">
-        <h1 className="text-3xl font-bold mb-6 text-center">
-          Tax Calculator
-        </h1>
+        <h1 className="text-3xl font-bold mb-6 text-center">Tax Calculator</h1>
 
         {/* Amount Input */}
         <div className="mb-4">
@@ -76,14 +74,24 @@ function App() {
         {result && (
           <div className="mt-6 p-4 border rounded-lg bg-gray-50">
             <h2 className="text-xl font-semibold mb-2">Result</h2>
-            <p><strong>Amount:</strong> {result.amount}</p>
-            <p><strong>Tax:</strong> {result.tax}</p>
-            <p><strong>Total:</strong> {result.total}</p>
+            <p>
+              <strong>Amount:</strong> {result.amount}
+            </p>
+            <p>
+              <strong>Tax:</strong> {result.tax}
+            </p>
+            <p>
+              <strong>Total:</strong> {result.total}
+            </p>
 
             <hr className="my-3" />
 
-            <p><strong>Service A Container:</strong> {result.container}</p>
-            <p><strong>Service B Container:</strong> {result.service_b_container}</p>
+            <p>
+              <strong>Service A Container:</strong> {result.container}
+            </p>
+            <p>
+              <strong>Service B Container:</strong> {result.service_b_container}
+            </p>
           </div>
         )}
       </div>

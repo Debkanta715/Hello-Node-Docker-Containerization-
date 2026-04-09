@@ -1,105 +1,81 @@
-# app1-hello (Node.js)
+This is the Official repository of **⭐ Full Stack DevOps for Software Developers (AWS, Azure, GCP)** on Udemy
 
-A simple Node.js Express application that returns a JSON greeting and environment info. Designed for containerization with Docker.
+# The Ultimate Java and Spring Boot Mastery Roadmap
 
-## Features
+Welcome to your one-stop-shop for mastering Java and Spring Boot! This repository offers a comprehensive learning experience with high-quality resources and community support. Dive into over 150+ hours of premium content, with everything you need to excel at Java and Spring Boot development.
 
-- Express server with a single `/` endpoint
-- Returns a JSON object with a message, environment variable, and container hostname
-- Ready for Docker deployment
+## 🎓 Learning Roadmap
 
-## Project Structure
+Most of the courses below are available in **Udemy For Business**, so if you have subscription - you can get FREE access.
+Here’s a structured path to enhance your skills with detailed courses available:
 
-```
-app.js           # Main application file
-package.json     # Node.js dependencies
-Dockerfile       # Docker build instructions
-```
+1. **[Spring Boot By Building Complex Projects Step by Step](https://link.embarkx.com/spring-boot) (90+ Hours of Content)**
+2. **[Master Spring Boot Microservices by Building eCommerce Project](https://link.embarkx.com/microservices) (55+ Hours of Content)**
+3. **[Full Stack AI DevOps for Software Developers (AWS, Azure, GCP)](https://link.embarkx.com/devops) (20+ Hours of Content)**
+4. **[Learn Java with 60+ Hours of Content](http://link.embarkx.com/java) (60+ Hours of Content)**
+5. **[Master Spring Security with React JS + OAuth2](https://link.embarkx.com/spring-security) (34+ Hours of Content)**
+6. **[Master IntelliJ IDEA](http://link.embarkx.com/intellij) (3+ Hours of Content)**
 
-## Getting Started
 
-### Prerequisites
+## 🌟 With All Our Courses You Gain Access To
 
-- [Node.js](https://nodejs.org/) (if running locally)
-- [Docker](https://www.docker.com/) (for containerization)
+- 📝 **Notes:** Detailed and downloadable notes to accompany each lesson.
+- 💻 **Source Code:** Full access to the source code used in the tutorials.
+- 🤔 **Doubt Solving:** Responsive instructor and community support.
+- 🎥 **High-Quality HD Videos:** Easy to understand, high-definition video tutorials.
+- 🔄 **Free Lifetime Updates:** Continuous updates to course content at no extra cost.
 
-### Install & Run Locally
+## 📚 Why Choose This Mastery Series?
 
-1. Install dependencies:
-   ```sh
-   npm install
-   ```
-2. Start the server:
-   ```sh
-   node app.js
-   ```
-3. Visit [http://localhost:3000](http://localhost:3000) in your browser.
+With this series, you're not just learning; you're preparing to dominate the field of Java and Spring Boot development. Our structured learning path ensures that you build your skills progressively, with each course designed to build on the knowledge gained from the previous one.
 
-### Run with Docker
+### Join Us Now!
 
-#### 1. Build the Docker image
+Start your journey today to become a master at Java and Spring Boot. Our community and expert instructors are here to support your learning every step of the way. **Enroll and start building your future, today!**
 
-You can build the Docker image with your own Docker Hub username and a custom image name. Replace `debkantadey29` with your Docker Hub username if you want to push to Docker Hub.
 
-```sh
-docker build -t debkantadey29/hello-node .
-```
 
-Or use a different image name:
 
-```sh
-docker build -t debkantadey29/hello-node1 .
-```
 
-#### 2. Run the Docker container
+# Usage Policy for Course Materials
 
-Run the container with a custom name and port mapping:
+## Instructor Information
 
-```sh
-docker run -d --name hello-node -p 3000:3000 debkantadey29/hello-node
-```
+**Instructor:** Faisal Memon  
+**Company:** [EmbarkX.com](http://www.embarkx.com)
 
-Or, if you used a different image name:
+## Policy Overview
 
-```sh
-docker run -d --name hello-node1 -p 3000:3000 debkantadey29/hello-node1
-```
+This document outlines the guidelines and restrictions concerning the use of course materials provided by EmbarkX, including but not limited to PDF presentations, code samples, and video tutorials.
 
-#### 3. Check running containers
+### 1. Personal Use Only
 
-```sh
-docker ps
-```
+The materials provided in this course are intended for **your personal use only**. They are to be used solely for the purpose of learning and completing this course.
 
-#### 4. Push the image to Docker Hub (optional)
+### 2. No Unauthorized Sharing or Distribution
 
-If you want to upload your image to Docker Hub:
+You are **not permitted** to share, distribute, or publicly post any course materials on any websites, social media platforms, or other public forums without prior written consent from the instructor.
 
-```sh
-docker push debkantadey29/hello-node
-# or
-docker push debkantadey29/hello-node1
-```
+### 3. Intellectual Property
 
-#### 5. Access the app
+All course materials are protected by copyright laws and are the intellectual property of Faisal Memon and EmbarkX. Unauthorized use, reproduction, or distribution of these materials is **strictly prohibited**.
 
-Visit [http://localhost:3000](http://localhost:3000) in your browser to see the app running in Docker.
+### 4. Reporting Violations
 
-#### Environment Variables
+If you become aware of any unauthorized sharing or distribution of course materials, please report it immediately to [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com).
 
-- `PORT` (default: 3000)
-- `ENV_VALUE` (optional, shown in response)
+### 5. Legal Action
 
-## Example Response
+We reserve the right to take legal action against individuals or entities found to be violating this usage policy.
 
-```
-{
-  "message": "Hello from Simple App (Node)",
-  "env": "No env set",
-  "container": "<container-hostname>"
-}
-```
+## Thank You
 
----
+Thank you for respecting these guidelines and helping us maintain the integrity of our course materials.
 
-This is a minimal Node.js app for demo or learning purposes. Feel free to modify and extend!
+## Contact Information
+
+- **Email:** [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com)
+- **Website:** [www.embarkx.com](http://www.embarkx.com)
+
+
+
