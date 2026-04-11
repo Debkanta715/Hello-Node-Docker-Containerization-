@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is the Official repository of **⭐ Full Stack DevOps for Software Developers (AWS, Azure, GCP)** on Udemy
 
 # The Ultimate Java and Spring Boot Mastery Roadmap
@@ -64,5 +65,7 @@ A full-stack tax calculator with:
    docker compose up --build
    ```
 3. Access the frontend (if available) at the port shown in the app's README (e.g., http://localhost:5173 for the tax calculator).
+=======
+>>>>>>> 379b103ed80b2a4cd07cb7f4e49e54607a508f31
 
 ---
