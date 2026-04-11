@@ -16,7 +16,6 @@ Here’s a structured path to enhance your skills with detailed courses availabl
 5. **[Master Spring Security with React JS + OAuth2](https://link.embarkx.com/spring-security) (34+ Hours of Content)**
 6. **[Master IntelliJ IDEA](http://link.embarkx.com/intellij) (3+ Hours of Content)**
 
-
 ## 🌟 With All Our Courses You Gain Access To
 
 - 📝 **Notes:** Detailed and downloadable notes to accompany each lesson.
@@ -33,49 +32,37 @@ With this series, you're not just learning; you're preparing to dominate the fie
 
 Start your journey today to become a master at Java and Spring Boot. Our community and expert instructors are here to support your learning every step of the way. **Enroll and start building your future, today!**
 
-
-
-
-
 # Usage Policy for Course Materials
 
-## Instructor Information
+---
 
-**Instructor:** Faisal Memon  
-**Company:** [EmbarkX.com](http://www.embarkx.com)
+## 🐳 Dockerized Projects in This Repository
 
-## Policy Overview
+This repository contains hands-on, containerized full-stack applications for learning and experimentation:
 
-This document outlines the guidelines and restrictions concerning the use of course materials provided by EmbarkX, including but not limited to PDF presentations, code samples, and video tutorials.
+### 1. app1-hello
 
-### 1. Personal Use Only
+A multi-language hello world app (Node.js, Python, Spring Boot) with Docker Compose setups for each.
 
-The materials provided in this course are intended for **your personal use only**. They are to be used solely for the purpose of learning and completing this course.
+- Path: `docker/app1-hello/`
+- Each subfolder contains a simple app and Dockerfile.
 
-### 2. No Unauthorized Sharing or Distribution
+### 2. app2-tax-calculator
 
-You are **not permitted** to share, distribute, or publicly post any course materials on any websites, social media platforms, or other public forums without prior written consent from the instructor.
+A full-stack tax calculator with:
 
-### 3. Intellectual Property
+- **Frontend:** React (Vite)
+- **Backend:** Node.js (service-a and service-b)
+- Path: `docker/app2-tax-calculator/`
+- See its [README](docker/app2-tax-calculator/README.md) for details and usage.
 
-All course materials are protected by copyright laws and are the intellectual property of Faisal Memon and EmbarkX. Unauthorized use, reproduction, or distribution of these materials is **strictly prohibited**.
+## 🚀 Quick Start for Docker Apps
 
-### 4. Reporting Violations
+1. Open a terminal in the desired app folder (e.g., `docker/app2-tax-calculator`).
+2. Run:
+   ```
+   docker compose up --build
+   ```
+3. Access the frontend (if available) at the port shown in the app's README (e.g., http://localhost:5173 for the tax calculator).
 
-If you become aware of any unauthorized sharing or distribution of course materials, please report it immediately to [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com).
-
-### 5. Legal Action
-
-We reserve the right to take legal action against individuals or entities found to be violating this usage policy.
-
-## Thank You
-
-Thank you for respecting these guidelines and helping us maintain the integrity of our course materials.
-
-## Contact Information
-
-- **Email:** [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com)
-- **Website:** [www.embarkx.com](http://www.embarkx.com)
-
-
-
+---
