@@ -1,71 +1,358 @@
-<<<<<<< HEAD
-This is the Official repository of **⭐ Full Stack DevOps for Software Developers (AWS, Azure, GCP)** on Udemy
+# Hello Node Docker Containerization
 
-# The Ultimate Java and Spring Boot Mastery Roadmap
+A Beginner’s Guide to Docker, Microservices, and Kubernetes
 
-Welcome to your one-stop-shop for mastering Java and Spring Boot! This repository offers a comprehensive learning experience with high-quality resources and community support. Dive into over 150+ hours of premium content, with everything you need to excel at Java and Spring Boot development.
-
-## 🎓 Learning Roadmap
-
-Most of the courses below are available in **Udemy For Business**, so if you have subscription - you can get FREE access.
-Here’s a structured path to enhance your skills with detailed courses available:
-
-1. **[Spring Boot By Building Complex Projects Step by Step](https://link.embarkx.com/spring-boot) (90+ Hours of Content)**
-2. **[Master Spring Boot Microservices by Building eCommerce Project](https://link.embarkx.com/microservices) (55+ Hours of Content)**
-3. **[Full Stack AI DevOps for Software Developers (AWS, Azure, GCP)](https://link.embarkx.com/devops) (20+ Hours of Content)**
-4. **[Learn Java with 60+ Hours of Content](http://link.embarkx.com/java) (60+ Hours of Content)**
-5. **[Master Spring Security with React JS + OAuth2](https://link.embarkx.com/spring-security) (34+ Hours of Content)**
-6. **[Master IntelliJ IDEA](http://link.embarkx.com/intellij) (3+ Hours of Content)**
-
-## 🌟 With All Our Courses You Gain Access To
-
-- 📝 **Notes:** Detailed and downloadable notes to accompany each lesson.
-- 💻 **Source Code:** Full access to the source code used in the tutorials.
-- 🤔 **Doubt Solving:** Responsive instructor and community support.
-- 🎥 **High-Quality HD Videos:** Easy to understand, high-definition video tutorials.
-- 🔄 **Free Lifetime Updates:** Continuous updates to course content at no extra cost.
-
-## 📚 Why Choose This Mastery Series?
-
-With this series, you're not just learning; you're preparing to dominate the field of Java and Spring Boot development. Our structured learning path ensures that you build your skills progressively, with each course designed to build on the knowledge gained from the previous one.
-
-### Join Us Now!
-
-Start your journey today to become a master at Java and Spring Boot. Our community and expert instructors are here to support your learning every step of the way. **Enroll and start building your future, today!**
-
-# Usage Policy for Course Materials
+This project provides a structured and practical introduction to containerization using Docker, orchestration with Docker Compose, and deployment using Kubernetes. It includes multiple services and demonstrates how microservices communicate with each other in both local and cluster environments.
 
 ---
 
-## 🐳 Dockerized Projects in This Repository
+# Project Structure
 
-This repository contains hands-on, containerized full-stack applications for learning and experimentation:
-
-### 1. app1-hello
-
-A multi-language hello world app (Node.js, Python, Spring Boot) with Docker Compose setups for each.
-
-- Path: `docker/app1-hello/`
-- Each subfolder contains a simple app and Dockerfile.
-
-### 2. app2-tax-calculator
-
-A full-stack tax calculator with:
-
-- **Frontend:** React (Vite)
-- **Backend:** Node.js (service-a and service-b)
-- Path: `docker/app2-tax-calculator/`
-- See its [README](docker/app2-tax-calculator/README.md) for details and usage.
-
-## 🚀 Quick Start for Docker Apps
-
-1. Open a terminal in the desired app folder (e.g., `docker/app2-tax-calculator`).
-2. Run:
-   ```
-   docker compose up --build
-   ```
-3. Access the frontend (if available) at the port shown in the app's README (e.g., http://localhost:5173 for the tax calculator).
-=======
->>>>>>> 379b103ed80b2a4cd07cb7f4e49e54607a508f31
+```
+Hello-Node-Docker-Containerization/
+│
+├── docker/
+│   ├── app1-hello/
+│   │   ├── docker-compose.yml
+│   │   ├── node/
+│   │   │   ├── app.js
+│   │   │   ├── Dockerfile
+│   │   │   └── package.json
+│   │   └── python/
+│   │       ├── Dockerfile
+│   │       ├── main.py
+│   │       └── requirements.txt
+│
+│   └── app2-tax-calculator/
+│       ├── docker-compose.yml
+│       ├── node/
+│       │   ├── service-a/
+│       │   └── service-b/
+│       └── tax-calculator-frontend/
+│
+├── k8s/
+│   ├── app1-hello/
+│   │   ├── app.yaml
+│   │   ├── config.yaml
+│   │   └── secret.yaml
+│
+└── README.md
+```
 
 ---
+
+# Docker Overview
+
+Docker allows you to package an application along with its dependencies into a container. Containers ensure consistency across different environments such as development, testing, and production.
+
+## Common Docker Commands
+
+```
+docker pull <image>
+docker build -t <name> .
+docker run -d -p 3000:3000 <image>
+docker ps
+docker stop <container>
+docker rm <container>
+docker images
+docker logs <container>
+docker exec -it <container> bash
+```
+
+---
+
+# Writing a Dockerfile
+
+Example for a Node.js application:
+
+```
+FROM node:18
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "app.js"]
+```
+
+Explanation:
+
+- FROM: Defines the base image
+- WORKDIR: Sets working directory
+- COPY: Copies files into container
+- RUN: Executes commands
+- EXPOSE: Declares port
+- CMD: Starts the application
+
+---
+
+# Docker Compose
+
+Docker Compose is used to run multiple services together.
+
+Example:
+
+```
+version: '3'
+
+services:
+  node-app:
+    build: ./node
+    ports:
+      - "3000:3000"
+
+  python-app:
+    build: ./python
+    ports:
+      - "5000:5000"
+```
+
+Commands:
+
+```
+docker-compose up --build
+docker-compose down
+```
+
+---
+
+# Microservices Concept
+
+In this project:
+
+- service-a communicates with service-b
+- frontend communicates with backend services
+
+Docker networking allows services to communicate using service names:
+
+```
+http://service-b:4000
+```
+
+---
+
+# Kubernetes Overview
+
+Kubernetes manages containerized applications across clusters.
+
+## Core Components
+
+- Pod: Smallest deployable unit
+- Deployment: Manages pods and replicas
+- Service: Exposes applications
+- ConfigMap: Stores configuration
+- Secret: Stores sensitive data
+
+---
+
+# Kubernetes Service Types
+
+- ClusterIP: Internal communication only
+- NodePort: Exposes service externally via node port
+- LoadBalancer: External load balancing
+
+---
+
+# Kubernetes Example
+
+## Deployment
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicea
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: servicea
+  template:
+    metadata:
+      labels:
+        app: servicea
+    spec:
+      containers:
+        - name: servicea
+          image: embarkx/tax-service-a:latest
+          ports:
+            - containerPort: 3000
+```
+
+## Service
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicea
+spec:
+  type: NodePort
+  selector:
+    app: servicea
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 32110
+```
+
+---
+
+# Microservices in Kubernetes
+
+This project demonstrates communication between services:
+
+```
+service-a → service-b
+```
+
+Important rule:
+
+Service names must match exactly:
+
+```
+http://serviceb:4000
+```
+
+---
+
+# How to Deploy
+
+If your structure is:
+
+```
+service/
+  service-a/app.yaml
+  service-b/app.yaml
+```
+
+Run:
+
+```
+kubectl apply -f service/
+```
+
+Or individually:
+
+```
+kubectl apply -f service/service-a/app.yaml
+kubectl apply -f service/service-b/app.yaml
+```
+
+---
+
+# Useful Kubernetes Commands
+
+```
+kubectl get pods
+kubectl get svc
+kubectl describe pod <pod-name>
+kubectl logs <pod-name>
+kubectl delete -f <file>
+```
+
+---
+
+# Accessing the Application
+
+If using NodePort:
+
+```
+http://<node-ip>:32110
+```
+
+If using Minikube:
+
+```
+minikube service servicea
+```
+
+---
+
+# Common Issues and Fixes
+
+## Service Name Mismatch
+
+Incorrect:
+
+```
+service-b
+```
+
+Correct:
+
+```
+serviceb
+```
+
+---
+
+## Incorrect Service Type
+
+Incorrect:
+
+```
+ClusterIp
+```
+
+Correct:
+
+```
+ClusterIP
+```
+
+---
+
+## Port Mismatch
+
+Ensure:
+
+- containerPort matches application port
+- targetPort matches containerPort
+
+---
+
+## Missing YAML Separator
+
+Use:
+
+```
+---
+```
+
+Between multiple resources.
+
+---
+
+# Learning Approach
+
+1. Start with Docker basics
+2. Run a single container
+3. Use Docker Compose
+4. Move to Kubernetes
+5. Experiment and debug
+
+---
+
+# References
+
+- Docker Documentation
+- Docker Compose Documentation
+- Kubernetes Documentation
+- Node.js Documentation
+
+---
+
+# Summary
+
+This project demonstrates:
+
+- Containerization using Docker
+- Multi-service orchestration
+- Kubernetes deployment
+- Microservice communication
