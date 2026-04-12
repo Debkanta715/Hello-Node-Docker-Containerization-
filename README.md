@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Hello Node Docker Containerization
 
 A Beginner’s Guide to Docker, Microservices, and Kubernetes
@@ -356,3 +357,6 @@ This project demonstrates:
 - Multi-service orchestration
 - Kubernetes deployment
 - Microservice communication
+=======
+
+>>>>>>> c1c5dbdeb317ff14f8141c9daba4446505347899
